@@ -55,4 +55,4 @@ export const deleteProduct = async (req, res) => {
   });
 
   res.json({ data: deleted });
-};
+}; // Delete a product
