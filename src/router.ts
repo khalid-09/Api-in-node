@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { body, oneOf } from 'express-validator';
+import { body } from 'express-validator';
 import { handleInputErrors } from './modules/middleware';
 
 const router = Router();

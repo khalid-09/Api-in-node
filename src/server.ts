@@ -1,9 +1,9 @@
+import { protect } from './modules/auth';
+import { createNewUser, signIn } from './handlers/user';
+
 import express from 'express';
 import router from './router';
 import morgan from 'morgan';
-
-import { protect } from './modules/auth';
-import { createNewUser, signIn } from './handlers/user';
 
 const app = express();
 
