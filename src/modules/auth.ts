@@ -5,8 +5,8 @@ export const hashPassword = password => {
   return bcrypt.hash(password, 5);
 };
 
-export const comparePasswords = (password, hash) => {
-  return bcrypt.compare(password, hash);
+export const comparePasswords = (password, hashedPassword) => {
+  return bcrypt.compare(password, hashedPassword);
 };
 
 export const createJWT = user => {
@@ -36,7 +36,6 @@ export const protect = (req, res, next) => {
     const user = jwt.verify(token, process.env.JWT_SECRET);
     req.user = user;
     next();
-    return;
   } catch (e) {
     console.error(e);
     res.status(401);
