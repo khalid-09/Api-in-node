@@ -12,10 +12,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res, next) => {
-  setTimeout(() => {
-    next(new Error('Opps! Something went wrong'));
-  }, 1);
-}); // this is how you handle async errors in express by passing the error to next function and express will handle it for us
+  res.json({ message: 'Hello' });
+});
+
+// app.get('/', (req, res, next) => {
+//   setTimeout(() => {
+//     next(new Error('Opps! Something went wrong'));
+//   }, 1);
+// }); // this is how you handle async errors in express by passing the error to next function and express will handle it for us
 
 app.use('/api', protect, router);
 
